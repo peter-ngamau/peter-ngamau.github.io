@@ -2,7 +2,7 @@
 <img src="C:\my photos\prof photos\Prof image.png" alt="My Profile Picture" style="float: right; width: 200px; height: 200px; object-fit: cover; border-radius: 50%; margin-left: 20px; margin-bottom: 20px;">
 
 ## Data Analyst | Turning messy data into clear business insights
-[My LinkedIn](https://www.linkedin.com/in/peter-ngamau/) | [View My Resume]([link-to-google-drive-pdf](https://drive.google.com/file/d/1STXjM_BDL34SEZdvwyJ2wmrlk_i_iXsC/view?usp=sharing)) | [Email Me](mailto:ptahmwangi@gmail.com)
+[My LinkedIn](https://www.linkedin.com/in/peter-ngamau/) | [View My Resume](https://drive.google.com/file/d/1STXjM_BDL34SEZdvwyJ2wmrlk_i_iXsC/view?usp=sharing) | [Email Me](mailto:ptahmwangi@gmail.com)
 
 ---
 
