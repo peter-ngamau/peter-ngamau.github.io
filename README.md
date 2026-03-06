@@ -15,7 +15,7 @@
 
 **The Impact:** The mean number of goals scored in women's international soccer matches is greater than men's.
 
-🔗 [View the Dashboard/Summary](link-to-live-dashboard) | 💻 [View the Code]([link-to-github-repo](https://github.com/peter-ngamau/Hypothesis-Testing-with-Men-s-and-Women-s-Soccer-Matches/blob/main/notebooks/notebook.ipynb))
+🔗 [View the Dashboard/Summary](link-to-live-dashboard) | 💻 [View the Code](https://github.com/peter-ngamau/Hypothesis-Testing-with-Men-s-and-Women-s-Soccer-Matches/blob/main/notebooks/notebook.ipynb)
 
 *(Optional: Add a screenshot of your project here later!)*
 
