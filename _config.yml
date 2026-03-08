@@ -1,1 +1,14 @@
-theme: jekyll-theme-Dinky
+title: Peter Ngamau Portfolio
+description: Data Analyst Portfolio showcasing projects and skills
+theme: jekyll-theme-cayman
+
+# Navigation links
+nav:
+  - title: Home
+    url: /
+  - title: Projects
+    url: /projects
+  - title: About
+    url: /about
+  - title: Contact
+    url: /contact
