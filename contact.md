@@ -1,3 +1,5 @@
+[Home](/) | [Projects](/projects) | [Contact](/contact)
+
 # Contact
 
 I’d love to connect with you!  
