@@ -1,3 +1,4 @@
+[Home](/) | [Projects](/projects) | [About](/about) | [Contact](/contact)
 # Hi I'm Peter Ngamau
 <img src="https://drive.google.com/file/d/1W6KeMeVmP6XHMP1Aww_EVtxjlwIed6JJ/view" alt="My Profile Picture" style="float: right; width: 200px; height: 200px; object-fit: cover; border-radius: 50%; margin-left: 20px; margin-bottom: 20px;">
 
