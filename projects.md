@@ -1,5 +1,3 @@
----
-
 ## 📊 Featured Projects
 
 ### 1. Football Results Analysis Project
