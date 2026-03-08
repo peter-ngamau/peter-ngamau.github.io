@@ -1,3 +1,5 @@
+[Home](/) | [Projects](/projects) | [Contact](/contact)
+
 ## 📊 Featured Projects
 
 ### 1. Football Results Analysis Project
