@@ -19,10 +19,12 @@
 **The Problem:** The company had sales data, but it wasn’t clear which products were driving revenue, how sales were trending over time, or how customer behavior was impacting performance.
 **The Tools Used:** SQL, Python, Power BI, Excel
 **The Impact:** 
+ 
  **Key Findings:**
 - A small group of products contributed the majority of total revenue
 - Sales performance varied across different periods, showing clear trends
 - Customer purchasing patterns highlighted opportunities for repeat sales
+
 **Recommendations:**
 - Focus on high-performing products to maximize revenue
 - Reassess or optimize low-performing inventory
