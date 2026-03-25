@@ -18,6 +18,7 @@
 ### 2. Retail Sales Data Analysis Project
 **The Problem:** The company had sales data, but it wasn’t clear which products were driving revenue, how sales were trending over time, or how customer behavior was impacting performance.
 **The Tools Used:** SQL, Python, Power BI, Excel
+
 **The Impact:** 
  
  **Key Findings:**
