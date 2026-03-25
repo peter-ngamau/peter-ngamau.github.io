@@ -32,7 +32,7 @@
 - Leverage customer insights for targeted marketing and retention strategies
 
 
-🔗 [View the Dashboard/Summary]([link-to-live-dashboard](https://github.com/peter-ngamau/Retail-Sales-Project-End-to-End-/blob/main/My%20Project%20Power%20Bi(RetailSales).pbix)) | 💻 [View the Code]([link-to-github-repo](https://github.com/peter-ngamau/Retail-Sales-Project-End-to-End-))
+🔗 [View the Dashboard/Summary](https://github.com/peter-ngamau/Retail-Sales-Project-End-to-End-/blob/main/My%20Project%20Power%20Bi(RetailSales).pbix) | 💻 [View the Code](https://github.com/peter-ngamau/Retail-Sales-Project-End-to-End-)
 
 ---
 
