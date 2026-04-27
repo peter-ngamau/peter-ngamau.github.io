@@ -42,7 +42,7 @@ A complete end-to-end analytics pipeline — from raw government data files to a
 - **Agent density and inclusion are positively correlated** — counties with more agents per 1,000 people consistently show higher inclusion rates
 
 ---
-![Dashboard preview](assets/images/financial_inclusion_dashboard.png)
+![Dashboard preview](Screenshorts/Fin1.png)
 ### Links
 
 - 📂 [View full project on GitHub](https://github.com/peter-ngamau/Financial-Inclusion-In-Kenya)
