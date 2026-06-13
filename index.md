@@ -28,4 +28,4 @@ I enjoy bridging technical analysis with business strategy, especially in sales 
 ## 📬 Let's Connect
 Currently open to Data Analyst roles. I'd love to chat about data, tech, or your favorite coffee roast! 
 
-[Send me an email](mailto:ptahmwangi@email.com) to get in touch.
+[Send me an email](mailto:ptahmwangi@gmail.com) to get in touch.
