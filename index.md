@@ -1,31 +1,1323 @@
-[Home](/) | [Projects](/projects) | [Contact](/contact)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Peter Ngamau — Data Analyst based in Nairobi, Kenya. Python, SQL, Power BI, end-to-end analytics pipelines." />
+  <title>Peter Ngamau · Data Analyst</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    /* ── TOKENS ──────────────────────────────────────────────────────────── */
+    :root {
+      --navy:      #1B3A5C;
+      --teal:      #0F7173;
+      --teal-lt:   #E6F4F4;
+      --sand:      #F7F4EF;
+      --ink:       #1A1A2E;
+      --muted:     #6B7280;
+      --border:    #E2E8F0;
+      --white:     #FFFFFF;
+      --accent:    #D4622A;   /* warm terracotta — used sparingly */
 
-<img src="Prof-image.png" alt="My Profile Picture" style="float: right; width: 200px; height: 200px; object-fit: cover; border-radius: 50%; margin-left: 20px; margin-bottom: 20px;">
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body:    'Inter', system-ui, sans-serif;
 
-# Data Analyst | Turning messy data into clear business insights
-[My LinkedIn](https://www.linkedin.com/in/peter-ngamau/) | [View My Resume](https://docs.google.com/document/d/1y7hjYmltM29f6XsB0iB4F4BQcuq_P7ZT/edit) | [Email Me](mailto:ptahmwangi@gmail.com)
+      --r-sm: 6px;
+      --r-md: 12px;
+      --r-lg: 20px;
 
-# About Me
+      --shadow-sm: 0 1px 4px rgba(0,0,0,0.07);
+      --shadow-md: 0 4px 20px rgba(0,0,0,0.10);
+      --shadow-lg: 0 8px 40px rgba(0,0,0,0.13);
 
-Hi, I'm Peter Ngamau — a data analyst based in Nairobi, Kenya.  
-I specialize in turning raw data into actionable insights that help businesses make smarter decisions.
+      --max: 1100px;
+      --nav-h: 68px;
+    }
 
-## Background
-- Bachelor's in Agribusiness Management (Kisii University)
-- Certified Virtual Assistant (ALX Africa)
-- Ongoing studies in Python, SQL, and Power BI (DataCamp)
+    /* ── RESET ───────────────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      color: var(--ink);
+      background: var(--white);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
 
-## Skills
-- Data cleaning, validation, and visualization (Python, pandas, seaborn, matplotlib)
-- Dashboard creation and reporting (Power BI, Excel)
-- SQL querying and business analysis
-- Clear communication of technical findings to non-technical stakeholders
+    /* ── UTILITY ─────────────────────────────────────────────────────────── */
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 28px; }
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 99px;
+      background: var(--teal-lt);
+      color: var(--teal);
+    }
+    .tag.navy { background: #E8EEF5; color: var(--navy); }
+    .tag.accent { background: #FAEEE7; color: var(--accent); }
 
-## Interests
-I enjoy bridging technical analysis with business strategy, especially in sales and product performance contexts. My goal is to make data impactful and accessible for teams.
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 600;
+      padding: 11px 22px;
+      border-radius: var(--r-sm);
+      transition: all .2s;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--teal);
+      color: var(--white);
+    }
+    .btn-primary:hover { background: #0a5b5d; transform: translateY(-1px); box-shadow: var(--shadow-md); }
+    .btn-outline {
+      background: transparent;
+      color: var(--navy);
+      border: 1.5px solid var(--navy);
+    }
+    .btn-outline:hover { background: var(--navy); color: var(--white); transform: translateY(-1px); }
 
+    /* ── SCROLL REVEAL ───────────────────────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .55s ease, transform .55s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
 
-## 📬 Let's Connect
-Currently open to Data Analyst roles. I'd love to chat about data, tech, or your favorite coffee roast! 
+    /* ── NAV ─────────────────────────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 28px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 20px;
+      color: var(--navy);
+      letter-spacing: -.01em;
+    }
+    .nav-logo span { color: var(--teal); }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--muted);
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--teal); }
+    .nav-cta {
+      font-size: 13px;
+      font-weight: 600;
+      padding: 8px 18px;
+      background: var(--teal);
+      color: var(--white) !important;
+      border-radius: var(--r-sm);
+      transition: background .2s, transform .2s !important;
+    }
+    .nav-cta:hover { background: #0a5b5d !important; color: var(--white) !important; transform: translateY(-1px); }
 
-[Send me an email](mailto:ptahmwangi@gmail.com) to get in touch.
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { width: 24px; height: 2px; background: var(--navy); border-radius: 2px; transition: all .3s; }
+
+    /* ── HERO ────────────────────────────────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: calc(var(--nav-h) + 60px) 0 80px;
+      background: linear-gradient(155deg, var(--sand) 0%, var(--white) 60%);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -120px; right: -120px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(15,113,115,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 60px;
+      align-items: center;
+    }
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      width: 32px; height: 2px;
+      background: var(--teal);
+      border-radius: 2px;
+    }
+    .hero-eyebrow span {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--teal);
+    }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(40px, 5vw, 62px);
+      line-height: 1.1;
+      color: var(--navy);
+      margin-bottom: 8px;
+      letter-spacing: -.02em;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--teal);
+    }
+    .hero-subtitle {
+      font-size: 18px;
+      color: var(--muted);
+      margin-bottom: 28px;
+      max-width: 520px;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+    .hero-summary {
+      font-size: 15.5px;
+      color: #3D4451;
+      max-width: 540px;
+      line-height: 1.75;
+      margin-bottom: 36px;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .stat-item { }
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: 30px;
+      color: var(--navy);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .stat-label {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+    .stat-divider {
+      width: 1px;
+      background: var(--border);
+      align-self: stretch;
+    }
+
+    /* Avatar card */
+    .hero-avatar {
+      width: 280px;
+      flex-shrink: 0;
+    }
+    .avatar-card {
+      background: var(--white);
+      border-radius: var(--r-lg);
+      padding: 32px 24px;
+      box-shadow: var(--shadow-lg);
+      text-align: center;
+      border: 1px solid var(--border);
+      position: relative;
+    }
+    .avatar-card::after {
+      content: '';
+      position: absolute;
+      bottom: -3px; left: 20px; right: 20px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--teal), var(--navy));
+      border-radius: 0 0 var(--r-md) var(--r-md);
+    }
+    .avatar-initials {
+      width: 90px; height: 90px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--teal) 0%, var(--navy) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 32px;
+      color: var(--white);
+      margin: 0 auto 16px;
+      letter-spacing: -.02em;
+    }
+    .avatar-name {
+      font-family: var(--font-display);
+      font-size: 18px;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .avatar-title {
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+    .avatar-location {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+    .avatar-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      justify-content: center;
+    }
+    .avatar-links {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+    .avatar-links a {
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: var(--muted);
+      transition: all .2s;
+    }
+    .avatar-links a:hover { background: var(--teal); color: var(--white); border-color: var(--teal); }
+
+    /* ── TOOLS STRIP ─────────────────────────────────────────────────────── */
+    .tools-strip {
+      background: var(--navy);
+      padding: 22px 0;
+      overflow: hidden;
+    }
+    .tools-inner {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+      animation: scroll-tools 28s linear infinite;
+      width: max-content;
+    }
+    .tools-inner:hover { animation-play-state: paused; }
+    @keyframes scroll-tools {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .tool-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      white-space: nowrap;
+      color: rgba(255,255,255,0.7);
+      font-size: 13px;
+      font-weight: 500;
+    }
+    .tool-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--teal);
+      opacity: 0.7;
+    }
+
+    /* ── SECTION SHELL ───────────────────────────────────────────────────── */
+    section { padding: 96px 0; }
+    section:nth-child(even) { background: var(--sand); }
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .section-label::before {
+      content: '';
+      width: 24px; height: 2px;
+      background: var(--teal);
+    }
+    .section-label span {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--teal);
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 3.5vw, 40px);
+      color: var(--navy);
+      line-height: 1.15;
+      letter-spacing: -.02em;
+      margin-bottom: 16px;
+    }
+    .section-intro {
+      font-size: 16px;
+      color: var(--muted);
+      max-width: 560px;
+      line-height: 1.7;
+      margin-bottom: 56px;
+    }
+
+    /* ── SKILLS ──────────────────────────────────────────────────────────── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .skill-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+      padding: 28px 24px;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .skill-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .skill-icon {
+      width: 44px; height: 44px;
+      border-radius: var(--r-sm);
+      background: var(--teal-lt);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin-bottom: 16px;
+    }
+    .skill-card h3 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 10px;
+      letter-spacing: -.01em;
+    }
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .skill-tags span {
+      font-size: 11.5px;
+      color: var(--muted);
+      background: var(--sand);
+      padding: 3px 9px;
+      border-radius: 99px;
+      font-weight: 500;
+    }
+
+    /* ── PROJECTS ────────────────────────────────────────────────────────── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+    .project-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow .25s, transform .25s;
+    }
+    .project-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+    .project-header {
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    .project-header.kenya  { background: linear-gradient(135deg, #0F7173 0%, #1B3A5C 100%); }
+    .project-header.retail { background: linear-gradient(135deg, #1B3A5C 0%, #2D5988 100%); }
+    .project-header.churn  { background: linear-gradient(135deg, #D4622A 0%, #8B2E00 100%); }
+    .project-header.football { background: linear-gradient(135deg, #2D5988 0%, #0F7173 100%); }
+    .project-header-label {
+      position: absolute;
+      bottom: 14px; left: 18px;
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+    }
+    .project-body {
+      padding: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+    .project-body h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 10px;
+      line-height: 1.3;
+      letter-spacing: -.01em;
+    }
+    .project-body p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 20px;
+      flex: 1;
+    }
+    .project-findings {
+      background: var(--sand);
+      border-radius: var(--r-sm);
+      padding: 14px 16px;
+      margin-bottom: 20px;
+    }
+    .project-findings-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 8px;
+    }
+    .project-findings ul {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .project-findings li {
+      font-size: 13px;
+      color: #3D4451;
+      padding-left: 14px;
+      position: relative;
+      line-height: 1.5;
+    }
+    .project-findings li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--teal);
+      font-size: 11px;
+      top: 2px;
+    }
+    .project-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--teal);
+      transition: gap .2s;
+    }
+    .project-link:hover { gap: 10px; }
+
+    /* ── EXPERIENCE ──────────────────────────────────────────────────────── */
+    .experience-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+    }
+    .experience-list::before {
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: 24px;
+      bottom: 24px;
+      width: 2px;
+      background: var(--border);
+    }
+    .exp-item {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 24px;
+      padding-bottom: 48px;
+    }
+    .exp-dot {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 2px solid var(--teal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+      box-shadow: var(--shadow-sm);
+    }
+    .exp-content {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+      padding: 24px 28px;
+      box-shadow: var(--shadow-sm);
+    }
+    .exp-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 4px;
+    }
+    .exp-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: -.01em;
+    }
+    .exp-date {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 500;
+      white-space: nowrap;
+      padding: 4px 10px;
+      background: var(--sand);
+      border-radius: 99px;
+    }
+    .exp-company {
+      font-size: 14px;
+      color: var(--teal);
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    .exp-bullets {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .exp-bullets li {
+      font-size: 14px;
+      color: #3D4451;
+      padding-left: 18px;
+      position: relative;
+      line-height: 1.65;
+    }
+    .exp-bullets li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--teal);
+      font-size: 10px;
+      top: 4px;
+    }
+
+    /* ── CERTIFICATIONS ──────────────────────────────────────────────────── */
+    .certs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .cert-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+      padding: 24px;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .cert-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .cert-icon {
+      width: 48px; height: 48px;
+      border-radius: var(--r-sm);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+    .cert-icon.deloitte { background: #E8EEF5; }
+    .cert-icon.datacamp { background: #E6F4F4; }
+    .cert-icon.alx      { background: #FAEEE7; }
+    .cert-body h3 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 4px;
+      letter-spacing: -.01em;
+    }
+    .cert-body p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    .cert-meta {
+      font-size: 11px;
+      color: var(--teal);
+      font-weight: 600;
+      margin-top: 8px;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    /* ── CONTACT ─────────────────────────────────────────────────────────── */
+    #contact {
+      background: var(--navy);
+    }
+    #contact .section-label::before { background: var(--teal); }
+    #contact .section-label span { color: rgba(255,255,255,0.5); }
+    #contact .section-title { color: var(--white); }
+    #contact .section-intro { color: rgba(255,255,255,0.6); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .contact-link-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 20px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--r-md);
+      color: rgba(255,255,255,0.85);
+      font-size: 14px;
+      font-weight: 500;
+      transition: background .2s, border-color .2s, transform .2s;
+    }
+    .contact-link-item:hover {
+      background: rgba(15,113,115,0.3);
+      border-color: var(--teal);
+      transform: translateX(4px);
+    }
+    .contact-icon-box {
+      width: 40px; height: 40px;
+      border-radius: var(--r-sm);
+      background: rgba(15,113,115,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      flex-shrink: 0;
+    }
+    .contact-link-text { flex: 1; }
+    .contact-link-label {
+      font-size: 11px;
+      color: rgba(255,255,255,0.4);
+      font-weight: 400;
+      display: block;
+      margin-bottom: 1px;
+    }
+    .contact-availability {
+      padding: 32px;
+      background: rgba(15,113,115,0.15);
+      border: 1px solid rgba(15,113,115,0.3);
+      border-radius: var(--r-lg);
+    }
+    .avail-dot {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #4ADE80;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 16px;
+    }
+    .avail-dot::before {
+      content: '';
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #4ADE80;
+      animation: pulse-green 2s infinite;
+    }
+    @keyframes pulse-green {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.4; }
+    }
+    .contact-availability h3 {
+      font-family: var(--font-display);
+      font-size: 22px;
+      color: var(--white);
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+    .contact-availability p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    /* ── FOOTER ──────────────────────────────────────────────────────────── */
+    footer {
+      background: #111827;
+      padding: 32px 0;
+      text-align: center;
+    }
+    footer p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.35);
+    }
+    footer span { color: rgba(255,255,255,0.6); }
+
+    /* ── MOBILE ──────────────────────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: var(--nav-h);
+        left: 0; right: 0;
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+        padding: 20px 28px;
+        gap: 20px;
+        box-shadow: var(--shadow-md);
+      }
+      .hamburger { display: flex; }
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-avatar { display: none; }
+      .hero-stats { gap: 24px; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .experience-list::before { display: none; }
+      .exp-item { grid-template-columns: 1fr; }
+      .exp-dot { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">Peter <span>Ngamau</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact" class="nav-cta">Contact me</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <div class="hero-eyebrow reveal">
+            <span>Data Analyst · Nairobi, Kenya</span>
+          </div>
+          <h1 class="reveal">Turning raw data into<br/><em>decisions that stick.</em></h1>
+          <p class="hero-subtitle reveal">Python · SQL · Power BI · End-to-End Pipelines</p>
+          <p class="hero-summary reveal">
+            I build analytics projects from scratch — cleaning messy datasets, designing SQL databases,
+            running exploratory analysis, and publishing dashboards that help businesses act on what the
+            data actually says. Open to roles in Nairobi and remotely.
+          </p>
+          <div class="hero-actions reveal">
+            <a href="#projects" class="btn btn-primary">↓ See my work</a>
+            <a href="https://github.com/peter-ngamau" target="_blank" rel="noopener" class="btn btn-outline">GitHub ↗</a>
+            <a href="mailto:ptahmwangi@gmail.com" class="btn btn-outline">Email me</a>
+          </div>
+          <div class="hero-stats reveal">
+            <div class="stat-item">
+              <div class="stat-number">4+</div>
+              <div class="stat-label">End-to-end projects</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <div class="stat-number">10yr</div>
+              <div class="stat-label">CBK data analysed</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <div class="stat-number">7K+</div>
+              <div class="stat-label">Records processed</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <div class="stat-number">47</div>
+              <div class="stat-label">Kenyan counties mapped</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Avatar Card -->
+        <div class="hero-avatar reveal">
+          <div class="avatar-card">
+            <div class="avatar-initials">PN</div>
+            <div class="avatar-name">Peter Ngamau</div>
+            <div class="avatar-title">Data Analyst</div>
+            <div class="avatar-location">📍 Nairobi, Kenya</div>
+            <div class="avatar-badges">
+              <span class="tag">Python</span>
+              <span class="tag">SQL</span>
+              <span class="tag navy">Power BI</span>
+              <span class="tag navy">Tableau</span>
+            </div>
+            <div class="avatar-links">
+              <a href="https://github.com/peter-ngamau" target="_blank" rel="noopener" title="GitHub">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02.005 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+              <a href="https://linkedin.com/in/peter-ngamau" target="_blank" rel="noopener" title="LinkedIn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+              </a>
+              <a href="mailto:ptahmwangi@gmail.com" title="Email">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOLS STRIP -->
+  <div class="tools-strip">
+    <div class="tools-inner" id="toolsInner">
+      <!-- duplicated for seamless loop -->
+      <div class="tool-item"><span class="tool-dot"></span>Python</div>
+      <div class="tool-item"><span class="tool-dot"></span>pandas</div>
+      <div class="tool-item"><span class="tool-dot"></span>NumPy</div>
+      <div class="tool-item"><span class="tool-dot"></span>SQL Server</div>
+      <div class="tool-item"><span class="tool-dot"></span>T-SQL</div>
+      <div class="tool-item"><span class="tool-dot"></span>Power BI</div>
+      <div class="tool-item"><span class="tool-dot"></span>DAX</div>
+      <div class="tool-item"><span class="tool-dot"></span>Tableau</div>
+      <div class="tool-item"><span class="tool-dot"></span>matplotlib</div>
+      <div class="tool-item"><span class="tool-dot"></span>seaborn</div>
+      <div class="tool-item"><span class="tool-dot"></span>Excel</div>
+      <div class="tool-item"><span class="tool-dot"></span>EDA</div>
+      <div class="tool-item"><span class="tool-dot"></span>Hypothesis Testing</div>
+      <div class="tool-item"><span class="tool-dot"></span>Star Schema Design</div>
+      <div class="tool-item"><span class="tool-dot"></span>Git & GitHub</div>
+      <div class="tool-item"><span class="tool-dot"></span>Jupyter Notebooks</div>
+      <!-- duplicate -->
+      <div class="tool-item"><span class="tool-dot"></span>Python</div>
+      <div class="tool-item"><span class="tool-dot"></span>pandas</div>
+      <div class="tool-item"><span class="tool-dot"></span>NumPy</div>
+      <div class="tool-item"><span class="tool-dot"></span>SQL Server</div>
+      <div class="tool-item"><span class="tool-dot"></span>T-SQL</div>
+      <div class="tool-item"><span class="tool-dot"></span>Power BI</div>
+      <div class="tool-item"><span class="tool-dot"></span>DAX</div>
+      <div class="tool-item"><span class="tool-dot"></span>Tableau</div>
+      <div class="tool-item"><span class="tool-dot"></span>matplotlib</div>
+      <div class="tool-item"><span class="tool-dot"></span>seaborn</div>
+      <div class="tool-item"><span class="tool-dot"></span>Excel</div>
+      <div class="tool-item"><span class="tool-dot"></span>EDA</div>
+      <div class="tool-item"><span class="tool-dot"></span>Hypothesis Testing</div>
+      <div class="tool-item"><span class="tool-dot"></span>Star Schema Design</div>
+      <div class="tool-item"><span class="tool-dot"></span>Git & GitHub</div>
+      <div class="tool-item"><span class="tool-dot"></span>Jupyter Notebooks</div>
+    </div>
+  </div>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-label reveal"><span>What I work with</span></div>
+      <h2 class="section-title reveal">Skills & Tools</h2>
+      <p class="section-intro reveal">A practical toolkit built through real projects — not just coursework. Every tool below has been applied in a portfolio project with documented results.</p>
+      <div class="skills-grid">
+        <div class="skill-card reveal">
+          <div class="skill-icon">🐍</div>
+          <h3>Python Analysis</h3>
+          <div class="skill-tags">
+            <span>pandas</span><span>NumPy</span><span>matplotlib</span><span>seaborn</span><span>Jupyter</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-icon">🗄️</div>
+          <h3>SQL & Databases</h3>
+          <div class="skill-tags">
+            <span>T-SQL</span><span>SQL Server</span><span>CTEs</span><span>Window Functions</span><span>Star Schema</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-icon">📊</div>
+          <h3>Data Visualisation</h3>
+          <div class="skill-tags">
+            <span>Power BI</span><span>DAX</span><span>Tableau</span><span>Excel Charts</span><span>PivotTables</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-icon">🔬</div>
+          <h3>Analysis Methods</h3>
+          <div class="skill-tags">
+            <span>EDA</span><span>Hypothesis Testing</span><span>Segmentation</span><span>KPI Tracking</span><span>Trend Analysis</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-icon">🛠️</div>
+          <h3>Data Engineering</h3>
+          <div class="skill-tags">
+            <span>ETL Pipelines</span><span>Data Cleaning</span><span>Data Validation</span><span>Schema Design</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-icon">💼</div>
+          <h3>Business & Workflow</h3>
+          <div class="skill-tags">
+            <span>Stakeholder Reporting</span><span>Git & GitHub</span><span>VS Code</span><span>Google Workspace</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-label reveal"><span>Portfolio</span></div>
+      <h2 class="section-title reveal">End-to-End Projects</h2>
+      <p class="section-intro reveal">Each project runs the full analytics pipeline — raw data in, business insights out. Built independently, documented thoroughly, and available on GitHub.</p>
+      <div class="projects-grid">
+
+        <!-- Kenya Financial Inclusion -->
+        <div class="project-card reveal">
+          <div class="project-header kenya">
+            🇰🇪
+            <div class="project-header-label">Python · SQL Server · Power BI</div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="tag">Featured</span>
+              <span class="tag navy">10yr Dataset</span>
+              <span class="tag navy">47 Counties</span>
+            </div>
+            <h3>Kenya Financial Inclusion & Mobile Money Analytics</h3>
+            <p>Analysed 10 years of Central Bank of Kenya data alongside 7 waves of FinAccess Household Survey data to track M-Pesa adoption and financial exclusion gaps across all 47 counties.</p>
+            <div class="project-findings">
+              <div class="project-findings-label">Key Findings</div>
+              <ul>
+                <li>M-Pesa transaction value grew ~7× over the decade</li>
+                <li>Tana River had the highest exclusion rate at 37.6%</li>
+                <li>People with no formal education were 4.6× more likely to be excluded</li>
+              </ul>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/peter-ngamau/Financial-Inclusion-In-Kenya" target="_blank" rel="noopener" class="project-link">
+                View on GitHub <span>→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Retail Sales -->
+        <div class="project-card reveal">
+          <div class="project-header retail">
+            🛒
+            <div class="project-header-label">Python · SQL Server · Power BI</div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="tag">End-to-End Pipeline</span>
+              <span class="tag navy">5 Datasets</span>
+            </div>
+            <h3>Retail Sales Analysis — End-to-End Pipeline</h3>
+            <p>Built a complete analytics pipeline from raw CSVs to published Power BI dashboards — cleaning five datasets in Python, designing a SQL Server star schema, and publishing three interactive dashboards.</p>
+            <div class="project-findings">
+              <div class="project-findings-label">Key Findings</div>
+              <ul>
+                <li>Small store segment drove the majority of total revenue</li>
+                <li>Loyalty members generated measurably higher spend</li>
+                <li>Data integrity validated: zero discrepancies in reported KPIs</li>
+              </ul>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/peter-ngamau/Retail-Sales-Project-End-to-End-" target="_blank" rel="noopener" class="project-link">
+                View on GitHub <span>→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Customer Churn -->
+        <div class="project-card reveal">
+          <div class="project-header churn">
+            📉
+            <div class="project-header-label">Python · pandas · seaborn</div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="tag accent">EDA</span>
+              <span class="tag navy">7,000 Records</span>
+              <span class="tag navy">21 Features</span>
+            </div>
+            <h3>Customer Churn Analysis — IBM Telco Dataset</h3>
+            <p>Built a five-task Python EDA pipeline on ~7,000 customer records to identify the key drivers of churn and translate findings into actionable business recommendations.</p>
+            <div class="project-findings">
+              <div class="project-findings-label">Key Findings</div>
+              <ul>
+                <li>Month-to-month customers churned at significantly higher rates</li>
+                <li>First 12 months of tenure = highest churn risk window</li>
+                <li>Electronic check payment correlated strongly with attrition</li>
+              </ul>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/peter-ngamau/Customer-Churn-Analysis" target="_blank" rel="noopener" class="project-link">
+                View on GitHub <span>→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hypothesis Testing -->
+        <div class="project-card reveal">
+          <div class="project-header football">
+            ⚽
+            <div class="project-header-label">Python · pandas · scipy</div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="tag">Statistical Testing</span>
+              <span class="tag navy">Sports Analytics</span>
+            </div>
+            <h3>Hypothesis Testing — Men's vs Women's Football Scores</h3>
+            <p>Cleaned and merged two international match datasets, compared scoring patterns and win rates across both groups, then applied formal hypothesis testing to determine statistical significance.</p>
+            <div class="project-findings">
+              <div class="project-findings-label">Approach</div>
+              <ul>
+                <li>Exploratory analysis of goal distributions and win rates</li>
+                <li>Statistical hypothesis test on observed score differences</li>
+                <li>Results documented with supporting charts in Jupyter</li>
+              </ul>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/peter-ngamau/Hypothesis-Testing-with-Men-s-and-Women-s-Soccer-Matches" target="_blank" rel="noopener" class="project-link">
+                View on GitHub <span>→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-label reveal"><span>Work History</span></div>
+      <h2 class="section-title reveal">Professional Experience</h2>
+      <p class="section-intro reveal">Six years of front-line retail experience that grounds every analysis in real business context — understanding not just what data says, but what it means for day-to-day decisions.</p>
+      <div class="experience-list">
+
+        <div class="exp-item reveal">
+          <div class="exp-dot">📦</div>
+          <div class="exp-content">
+            <div class="exp-header">
+              <div class="exp-title">Retail Data & Operations Analyst</div>
+              <div class="exp-date">Sep 2021 – Present</div>
+            </div>
+            <div class="exp-company">Chandarana Foodplus Supermarket · Nairobi, Kenya</div>
+            <ul class="exp-bullets">
+              <li>Tracked product movement and purchase patterns to guide shelf placement decisions, reducing time-to-find for top-selling SKUs and improving aisle flow.</li>
+              <li>Monitored inventory data daily and flagged demand trends to the purchasing team, reducing both stockout and overstock incidents in high-velocity product lines.</li>
+              <li>Prepared regular management reports on stock levels and product performance — presenting data findings in plain language to non-technical stakeholders including department heads and buyers.</li>
+              <li>Maintained inventory accuracy across thousands of active SKUs in a high-volume retail environment.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-item reveal">
+          <div class="exp-dot">🧾</div>
+          <div class="exp-content">
+            <div class="exp-header">
+              <div class="exp-title">Cashier & Customer Service Associate</div>
+              <div class="exp-date">2017 – 2020</div>
+            </div>
+            <div class="exp-company">Tuskys Supermarket · Nairobi, Kenya</div>
+            <ul class="exp-bullets">
+              <li>Handled high daily transaction volumes with consistently low till-reconciliation error rates — an early introduction to the discipline of data accuracy.</li>
+              <li>Managed customer complaints and refund requests, keeping satisfaction scores consistently above store targets.</li>
+              <li>Gained hands-on exposure to point-of-sale transaction reporting and end-of-day reconciliation processes.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications">
+    <div class="container">
+      <div class="section-label reveal"><span>Learning</span></div>
+      <h2 class="section-title reveal">Certifications & Development</h2>
+      <p class="section-intro reveal">Structured learning that directly feeds into my project work — every course applied, not just completed.</p>
+      <div class="certs-grid">
+        <div class="cert-card reveal">
+          <div class="cert-icon deloitte">🏢</div>
+          <div class="cert-body">
+            <h3>Deloitte Australia — Data Analytics Simulation</h3>
+            <p>Forensic technology simulation involving Tableau dashboard development and Excel-based data classification to support business conclusions in a consulting context.</p>
+            <div class="cert-meta">Forage · April 2026</div>
+          </div>
+        </div>
+        <div class="cert-card reveal">
+          <div class="cert-icon datacamp">📚</div>
+          <div class="cert-body">
+            <h3>DataCamp — Data Analyst Track</h3>
+            <p>Structured learning path covering Python (pandas, NumPy), SQL, Power BI, and statistical analysis — directly applied in every portfolio project.</p>
+            <div class="cert-meta">In Progress · 2024–Present</div>
+          </div>
+        </div>
+        <div class="cert-card reveal">
+          <div class="cert-icon alx">🌍</div>
+          <div class="cert-body">
+            <h3>ALX Africa — Virtual Assistant Certification</h3>
+            <p>Remote collaboration, productivity tools, and project coordination in distributed team environments — skills that directly support remote data roles.</p>
+            <div class="cert-meta">ALX Africa · 2024</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-label reveal"><span>Get in Touch</span></div>
+      <h2 class="section-title reveal">Let's work together.</h2>
+      <p class="section-intro reveal">Open to data analyst roles in Nairobi and remotely. Happy to discuss your project, your team, or just talk data.</p>
+      <div class="contact-grid">
+        <div class="contact-links reveal">
+          <a href="mailto:ptahmwangi@gmail.com" class="contact-link-item">
+            <div class="contact-icon-box">✉️</div>
+            <div class="contact-link-text">
+              <span class="contact-link-label">Email</span>
+              ptahmwangi@gmail.com
+            </div>
+            <span>→</span>
+          </a>
+          <a href="https://linkedin.com/in/peter-ngamau" target="_blank" rel="noopener" class="contact-link-item">
+            <div class="contact-icon-box">💼</div>
+            <div class="contact-link-text">
+              <span class="contact-link-label">LinkedIn</span>
+              linkedin.com/in/peter-ngamau
+            </div>
+            <span>→</span>
+          </a>
+          <a href="https://github.com/peter-ngamau" target="_blank" rel="noopener" class="contact-link-item">
+            <div class="contact-icon-box">🐙</div>
+            <div class="contact-link-text">
+              <span class="contact-link-label">GitHub</span>
+              github.com/peter-ngamau
+            </div>
+            <span>→</span>
+          </a>
+        </div>
+        <div class="contact-availability reveal">
+          <div class="avail-dot">Available now</div>
+          <h3>Open to full-time data analyst roles</h3>
+          <p>Based in Nairobi, Kenya. Open to on-site roles locally, hybrid arrangements, and fully remote positions internationally. Quick to respond — usually within 24 hours.</p>
+          <a href="mailto:ptahmwangi@gmail.com" class="btn btn-primary">Send me a message →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>Built by <span>Peter Ngamau</span> · Nairobi, Kenya · <span>ptahmwangi@gmail.com</span></p>
+    </div>
+  </footer>
+
+  <script>
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+    // Scroll reveal
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 60);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => observer.observe(el));
+
+    // Stagger siblings within same parent
+    document.querySelectorAll('.skills-grid, .projects-grid, .certs-grid, .contact-links').forEach(grid => {
+      grid.querySelectorAll('.reveal').forEach((el, i) => {
+        el.style.transitionDelay = (i * 0.07) + 's';
+      });
+    });
+  </script>
+</body>
+</html>
